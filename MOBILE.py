@@ -1,7 +1,19 @@
-def mobile_number(n):
-    if len(n) == 10:
-        if n[0]=="7" or n[0]=="8" or n[0]=="9":
-            print("entered number is valid")
-        else:
-            print("entered number is invalid")
-mobile_number()
+def mn(n):
+    n_str=str(n)
+    if n_str[0] not in '7,8,9':
+        return False
+    digit_count=0
+    for i in n_str:
+        if i.isdigit():
+            digit_count += 1
+    if digit_count==10:
+        return True
+    else:
+        return False
+def main():
+    number=int(input("enter mobile number:"))
+    if mn(number):
+        print("valid number")
+    else:
+        print("invalid number")
+main()
